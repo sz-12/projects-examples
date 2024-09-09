@@ -1,0 +1,231 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registeration Form</title>
+        <link rel="stylesheet" href="p2.css">
+        <!--link to css-->
+    <!-- Include EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+        <!-- Logo Section -->
+        <div class="logo">
+            <img src="media\logo.jpg" alt="Your Organization Logo">
+        </div>
+            <h1>Course/Diploma Registeration Form</h1>
+            <form name="registeration" class="registeration-form"  id="registration-form"  onsubmit="return formValidation()">
+                <h2>Personal Information</h2>
+                <table>
+                    <tr>
+                        <td><label for="name">Name:</label></td>
+                        <td><input type="text" name="name" id="name" placeholder="your name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="phone">Phone:</label></td>
+                        <td>
+                            <select id="countryCode" name="countryCode">
+                            <option value="+971">UAE (+971)</option>
+                            <option value="+1">USA (+1)</option>
+                            <option value="+44">UK (+44)</option>
+                            <option value="+1">Canada (+1)</option>
+                            <option value="+20">Egypt (+20)</option>
+                            <option value="+91">India (+91)</option>
+                            <option value="+964">Iraq (+964)</option>
+                            <option value="+962">Jordan (+962)</option>
+                            <option value="+965">Kuwait (+965)</option>
+                            <option value="+961">Lebanon (+961)</option>
+                            <option value="+218">Libya (+218)</option>
+                            <option value="+212">Morocco (+212)</option>
+                            <option value="+968">Oman (+968)</option>
+                            <option value="+970">Palestine (+970)</option>
+                            <option value="+974">Qatar (+974)</option>
+                            <option value="+966">Saudi Arabia (+966)</option>
+                            <option value="+252">Somalia (+252)</option>
+                            <option value="+249">Sudan (+249)</option>
+                            <option value="+963">Syria (+963)</option>
+                            <option value="+216">Tunisia (+216)</option>
+                            <option value="+967">Yemen (+967)</option>
+                            <!-- Add more country codes as needed -->
+                            </select>
+                        <td><input type="tel" name="phone" id="phone" placeholder="your phone"></td>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="email" name="email" id="email" placeholder="your email"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="gender">Gender:</label></td>
+                        <td>Male:<input type="radio" name="gender" id="gender" value="male"><br>Female:<input type="radio" name="gender" id="gender" value="female"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="dob">Date of Birth:</label></td>
+                        <td><input type="date" name="dob" id="dob"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="course">Course:</label></td>
+                        <td>
+                            <select name="course" id="course">
+                                <option value="diploma">Diploma</option>
+                                <option value="certificate">Certificate</option>
+                                <option value="shortcourse">Short Course</option>
+                                <option value="workshop">Workshop</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="highestQualification">Highest Qualification:</label></td>
+                        <td>
+                            <select name="highestQualification" id="highestQualification">
+                                <option value="diploma">Diploma</option>
+                                <option value="Bachelor's Degree">Bachelor</option>
+                                <option value="Master's Degree">Master</option>
+                                <option value="High School">High School</option>
+                            </select>
+                        </td>
+                    </tr>
+                </td>
+                </table>
+
+    <table>
+    <h2>Technical and Practical Details</h2>
+        <tr>
+            <td><label for="operation system">Operation System:</label></td>
+            <td>
+                <select name="operation system" id="operation system">
+                <option value="windows">Windows</option>
+                <option value="mac">Mac</option>
+                <option value="linux">Linux</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="Internet Speed">Internet Speed:</label></td>  
+            <td><input type="text" name="Internet Speed" id="Internet Speed"></td>
+        </tr>
+        <tr>
+            <td><label for="Laptop Availability">Laptop Availability:</label></td>
+            <td>
+                <select name="Laptop Availability" id="Laptop Availability">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="skills">Skills:</label></td>
+            <td> 
+                <div id="skills">
+            <!-- Technical Skills -->
+            <label><input type="checkbox" name="skills" value="html"> HTML</label><br>
+            <label><input type="checkbox" name="skills" value="css"> CSS</label><br>
+            <label><input type="checkbox" name="skills" value="javascript"> JavaScript</label><br>
+            <label><input type="checkbox" name="skills" value="python"> Python</label><br>
+            <label><input type="checkbox" name="skills" value="java"> Java</label><br>
+            <label><input type="checkbox" name="skills" value="php"> PHP</label><br>
+            <label><input type="checkbox" name="skills" value="c++"> C++</label><br>
+            <label><input type="checkbox" name="skills" value="c#"> C#</label><br>
+            <label><input type="checkbox" name="skills" value="sql"> SQL</label><br>
+            <label><input type="checkbox" name="skills" value="ruby"> Ruby</label><br>
+            <label><input type="checkbox" name="skills" value="r"> R</label><br>
+            <label><input type="checkbox" name="skills" value="git"> Git</label><br>
+            <label><input type="checkbox" name="skills" value="nodejs"> Node.js</label><br>
+            <label><input type="checkbox" name="skills" value="react"> React</label><br>
+            <label><input type="checkbox" name="skills" value="angular"> Angular</label><br>
+            <label><input type="checkbox" name="skills" value="vuejs"> Vue.js</label><br>
+            <label><input type="checkbox" name="skills" value="django"> Django</label><br>
+            <label><input type="checkbox" name="skills" value="flask"> Flask</label><br>
+            <label><input type="checkbox" name="skills" value="swift"> Swift</label><br>
+            <label><input type="checkbox" name="skills" value="kotlin"> Kotlin</label><br>
+    
+        <!-- Design Skills -->
+            <label><input type="checkbox" name="skills" value="graphic-design"> Graphic Design</label><br>
+            <label><input type="checkbox" name="skills" value="ui-ux-design"> UI/UX Design</label><br>
+            <label><input type="checkbox" name="skills" value="adobe-photoshop"> Adobe Photoshop</label><br>
+            <label><input type="checkbox" name="skills" value="adobe-illustrator"> Adobe Illustrator</label><br>
+            <label><input type="checkbox" name="skills" value="adobe-xd"> Adobe XD</label><br>
+            <label><input type="checkbox" name="skills" value="figma"> Figma</label><br>
+
+        <!-- Data & Analytics Skills -->
+            <label><input type="checkbox" name="skills" value="data-analysis"> Data Analysis</label><br>
+            <label><input type="checkbox" name="skills" value="machine-learning"> Machine Learning</label><br>
+            <label><input type="checkbox" name="skills" value="data-visualization"> Data Visualization</label><br>
+            <label><input type="checkbox" name="skills" value="powerbi"> Power BI</label><br>
+            <label><input type="checkbox" name="skills" value="tableau"> Tableau</label><br>
+            <label><input type="checkbox" name="skills" value="statistics"> Statistics</label><br>
+            <label><input type="checkbox" name="skills" value="excel"> Excel</label><br>
+
+        <!-- Project Management & Communication Skills -->
+            <label><input type="checkbox" name="skills" value="project-management"> Project Management</label><br>
+            <label><input type="checkbox" name="skills" value="agile"> Agile Methodology</label><br>
+            <label><input type="checkbox" name="skills" value="scrum"> Scrum</label><br>
+            <label><input type="checkbox" name="skills" value="communication"> Communication</label><br>
+            <label><input type="checkbox" name="skills" value="leadership"> Leadership</label><br>
+            <label><input type="checkbox" name="skills" value="teamwork"> Teamwork</label><br>
+            <label><input type="checkbox" name="skills" value="problem-solving"> Problem-Solving</label><br>
+    
+        <!-- Marketing & Business Skills -->
+            <label><input type="checkbox" name="skills" value="digital-marketing"> Digital Marketing</label><br>
+            <label><input type="checkbox" name="skills" value="seo"> SEO</label><br>
+            <label><input type="checkbox" name="skills" value="content-writing"> Content Writing</label><br>
+            <label><input type="checkbox" name="skills" value="social-media-marketing"> Social Media Marketing</label><br>
+            <label><input type="checkbox" name="skills" value="copywriting"> Copywriting</label><br>
+            <label><input type="checkbox" name="skills" value="email-marketing"> Email Marketing</label><br>
+            <label><input type="checkbox" name="skills" value="business-analysis"> Business Analysis</label><br>
+
+        <!-- Other Skills -->
+            <label><input type="checkbox" name="skills" value="cloud-computing"> Cloud Computing</label><br>
+            <label><input type="checkbox" name="skills" value="cybersecurity"> Cybersecurity</label><br>
+            <label><input type="checkbox" name="skills" value="devops"> DevOps</label><br>
+            <label><input type="checkbox" name="skills" value="blockchain"> Blockchain</label><br>
+            <label><input type="checkbox" name="skills" value="ai"> Artificial Intelligence (AI)</label><br>
+            <label><input type="checkbox" name="skills" value="iot"> Internet of Things (IoT)</label><br></div>
+            </select>
+            </td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit"  class="submit"value="Register"></td>
+                </tr>
+            </tr>
+                </table>
+            
+                <!-- Agree to Terms and Policy -->
+            <div class="terms-policy">
+                <input type="checkbox" name="terms" id="terms" required>
+                <label for="terms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>.</label>
+            </div>
+            </form>
+    <!-- Footer with Copyright -->
+    <footer>
+    <p>&copy; 2024 SARA Al-Zaabi. All rights reserved.</p>
+    <p>&copy; 2024 Al-Bayan Institute.</p>
+</footer>
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("sjr6DgOpwjFUzWSK8"); // Replace with your EmailJS User ID
+        })();
+
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get form values
+            const formData = new FormData(event.target);
+            const data = {};
+            formData.forEach((value, key) => data[key] = value);
+
+            // Send the email
+            emailjs.send('service_m6jdzmr', 'template_hjbyvhc', data)
+                .then(function(response) {
+                    alert('Email sent successfully!');
+                    console.log('Success:', response);
+                }, function(error) {
+                    alert('Failed to send email.');
+                    console.log('Error:', error);
+                });
+        });
+    </script>
+        <script src="p2.js"></script>
+    </body>
+    </html>
