@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="p3.css">
+    <!--linked to css-->
+    
+</head>
+
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop id="bg-video">
+    <source src="media/Video Your Story.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+    <div class="container">
+        <div class="app">
+        <h1>To Do List</h1>
+    <br>
+
+        <form id="todo-form">
+            <input type="text" id="task-input" placeholder="Add a task...">
+            <button type="submit" id="add-task">Add</button>
+        </form>
+        <ul id="task-list">
+            <li>
+                <input type="checkbox" onclick="taskCompleted(this)" class="task-checkbox">
+                <input type="text" value="Task 1" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+                <i class="fa fa-trash-o" onclick="deleteTask(this)"></i>
+            </li>
+
+
+
+        </ul>
+    </div>
+
+    <!-- Background Music -->
+<audio id="background-music" autoplay loop>
+    <source src="C:\Users\DELL\Desktop\projects-examples\project 3\media\9_55 MINTUES OF SCENIC VIEW RELAXATION.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+    <script src="p3.js"></script>
+    
+</body>
+</html>
