@@ -27,6 +27,7 @@ h2 {
     background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background-image: url("media/geo.jpg");
 }
 .logo {
     text-align: center;

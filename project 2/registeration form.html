@@ -113,78 +113,58 @@
                 </select>
             </td>
         </tr>
+        <br>
+    <h2>Select Your Skills</h2>
+        <p>Please select one or more skills from the list below:</p>
         <tr>
-            <td><label for="skills">Skills:</label></td>
-            <td> 
-                <div id="skills">
-            <!-- Technical Skills -->
-            <label><input type="checkbox" name="skills" value="html"> HTML</label><br>
-            <label><input type="checkbox" name="skills" value="css"> CSS</label><br>
-            <label><input type="checkbox" name="skills" value="javascript"> JavaScript</label><br>
-            <label><input type="checkbox" name="skills" value="python"> Python</label><br>
-            <label><input type="checkbox" name="skills" value="java"> Java</label><br>
-            <label><input type="checkbox" name="skills" value="php"> PHP</label><br>
-            <label><input type="checkbox" name="skills" value="c++"> C++</label><br>
-            <label><input type="checkbox" name="skills" value="c#"> C#</label><br>
-            <label><input type="checkbox" name="skills" value="sql"> SQL</label><br>
-            <label><input type="checkbox" name="skills" value="ruby"> Ruby</label><br>
-            <label><input type="checkbox" name="skills" value="r"> R</label><br>
-            <label><input type="checkbox" name="skills" value="git"> Git</label><br>
-            <label><input type="checkbox" name="skills" value="nodejs"> Node.js</label><br>
-            <label><input type="checkbox" name="skills" value="react"> React</label><br>
-            <label><input type="checkbox" name="skills" value="angular"> Angular</label><br>
-            <label><input type="checkbox" name="skills" value="vuejs"> Vue.js</label><br>
-            <label><input type="checkbox" name="skills" value="django"> Django</label><br>
-            <label><input type="checkbox" name="skills" value="flask"> Flask</label><br>
-            <label><input type="checkbox" name="skills" value="swift"> Swift</label><br>
-            <label><input type="checkbox" name="skills" value="kotlin"> Kotlin</label><br>
-    
-        <!-- Design Skills -->
-            <label><input type="checkbox" name="skills" value="graphic-design"> Graphic Design</label><br>
-            <label><input type="checkbox" name="skills" value="ui-ux-design"> UI/UX Design</label><br>
-            <label><input type="checkbox" name="skills" value="adobe-photoshop"> Adobe Photoshop</label><br>
-            <label><input type="checkbox" name="skills" value="adobe-illustrator"> Adobe Illustrator</label><br>
-            <label><input type="checkbox" name="skills" value="adobe-xd"> Adobe XD</label><br>
-            <label><input type="checkbox" name="skills" value="figma"> Figma</label><br>
-
-        <!-- Data & Analytics Skills -->
-            <label><input type="checkbox" name="skills" value="data-analysis"> Data Analysis</label><br>
-            <label><input type="checkbox" name="skills" value="machine-learning"> Machine Learning</label><br>
-            <label><input type="checkbox" name="skills" value="data-visualization"> Data Visualization</label><br>
-            <label><input type="checkbox" name="skills" value="powerbi"> Power BI</label><br>
-            <label><input type="checkbox" name="skills" value="tableau"> Tableau</label><br>
-            <label><input type="checkbox" name="skills" value="statistics"> Statistics</label><br>
-            <label><input type="checkbox" name="skills" value="excel"> Excel</label><br>
-
-        <!-- Project Management & Communication Skills -->
-            <label><input type="checkbox" name="skills" value="project-management"> Project Management</label><br>
-            <label><input type="checkbox" name="skills" value="agile"> Agile Methodology</label><br>
-            <label><input type="checkbox" name="skills" value="scrum"> Scrum</label><br>
-            <label><input type="checkbox" name="skills" value="communication"> Communication</label><br>
-            <label><input type="checkbox" name="skills" value="leadership"> Leadership</label><br>
-            <label><input type="checkbox" name="skills" value="teamwork"> Teamwork</label><br>
-            <label><input type="checkbox" name="skills" value="problem-solving"> Problem-Solving</label><br>
-    
-        <!-- Marketing & Business Skills -->
-            <label><input type="checkbox" name="skills" value="digital-marketing"> Digital Marketing</label><br>
-            <label><input type="checkbox" name="skills" value="seo"> SEO</label><br>
-            <label><input type="checkbox" name="skills" value="content-writing"> Content Writing</label><br>
-            <label><input type="checkbox" name="skills" value="social-media-marketing"> Social Media Marketing</label><br>
-            <label><input type="checkbox" name="skills" value="copywriting"> Copywriting</label><br>
-            <label><input type="checkbox" name="skills" value="email-marketing"> Email Marketing</label><br>
-            <label><input type="checkbox" name="skills" value="business-analysis"> Business Analysis</label><br>
-
-        <!-- Other Skills -->
-            <label><input type="checkbox" name="skills" value="cloud-computing"> Cloud Computing</label><br>
-            <label><input type="checkbox" name="skills" value="cybersecurity"> Cybersecurity</label><br>
-            <label><input type="checkbox" name="skills" value="devops"> DevOps</label><br>
-            <label><input type="checkbox" name="skills" value="blockchain"> Blockchain</label><br>
-            <label><input type="checkbox" name="skills" value="ai"> Artificial Intelligence (AI)</label><br>
-            <label><input type="checkbox" name="skills" value="iot"> Internet of Things (IoT)</label><br></div>
-            </select>
+            <select id="skills" name="skills" multiple style="width: 100%; height: 200px;" size="10">
+                    <!-- Technical Skills -->
+                    <optgroup label="Technical Skills">
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="php">PHP</option>
+                        <option value="c++">C++</option>
+                        <option value="c#">C#</option>
+                        <option value="sql">SQL</option>
+                        <option value="ruby">Ruby</option>
+                        <option value="r">R</option>
+                        <option value="git">Git</option>
+                        <option value="nodejs">Node.js</option>
+                        <option value="react">React</option>
+                        <option value="angular">Angular</option>
+                        <option value="vuejs">Vue.js</option>
+                        <option value="django">Django</option>
+                        <option value="flask">Flask</option>
+                        <option value="swift">Swift</option>
+                        <option value="kotlin">Kotlin</option>
+                    </optgroup>
+        
+                    <!-- Design Skills -->
+                    <optgroup label="Design Skills">
+                        <option value="graphic-design">Graphic Design</option>
+                        <option value="ui-ux-design">UI/UX Design</option>
+                        <option value="adobe-photoshop">Adobe Photoshop</option>
+                        <option value="adobe-illustrator">Adobe Illustrator</option>
+                        <option value="adobe-xd">Adobe XD</option>
+                        <option value="figma">Figma</option>
+                    </optgroup>
+        
+                    <!-- Data & Analytics Skills -->
+                    <optgroup label="Data & Analytics Skills">
+                        <option value="data-analysis">Data Analysis</option>
+                        <option value="machine-learning">Machine Learning</option>
+                        <option value="data-visualization">Data Visualization</option>
+                        <option value="powerbi">Power BI</option>
+                        <option value="tableau">Tableau</option>
+                        <option value="statistics">Statistics</option>
+                </select>
             </td>
-            </tr>
-            <tr>
+        </tr>      
+        
+        <tr>
                 <td colspan="2"><input type="submit"  class="submit"value="Register"></td>
                 </tr>
             </tr>
