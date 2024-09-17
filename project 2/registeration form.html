@@ -6,22 +6,22 @@
         <title>Registeration Form</title>
         <link rel="stylesheet" href="p2.css">
         <!--link to css-->
-    <!-- Include EmailJS SDK -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     </head>
     <body>
         <div class="container">
         <!-- Logo Section -->
         <div class="logo">
-            <img src="media\logo.jpg" alt="Your Organization Logo">
+        <img src="media\logo.jpg" alt="Your Organization Logo">
         </div>
-            <h1>Course/Diploma Registeration Form</h1>
-            <form name="registeration" class="registeration-form"  id="registration-form"  onsubmit="return formValidation()">
-                <h2>Personal Information</h2>
+        <h1>Course/Diploma Registeration Form</h1>
+        <form name="registeration" class="registeration-form"  id="registration-form"  method="post" action="send_form.php" onsubmit="return formValidation()">
+            <fieldset> 
+            <h2>Personal Information</h2>
                 <table>
                     <tr>
                         <td><label for="name">Name:</label></td>
-                        <td><input type="text" name="name" id="name" placeholder="your name"></td>
+                        <td><input type="text" name="name" id="name" placeholder="your name" required>
+                        <span id="name-error" style="color: red;"></span></td>
                     </tr>
                     <tr>
                         <td><label for="phone">Phone:</label></td>
@@ -50,23 +50,28 @@
                             <option value="+967">Yemen (+967)</option>
                             <!-- Add more country codes as needed -->
                             </select>
-                        <td><input type="tel" name="phone" id="phone" placeholder="your phone"></td>
+                        <td><input type="tel" name="phone" id="phone" placeholder="your phone" required>
+                        <span id="phone-error" style="color: red;"></span></td>
                     <tr>
                         <td><label for="email">Email:</label></td>
-                        <td><input type="email" name="email" id="email" placeholder="your email"></td>
+                        <td><input type="email" name="email" id="email" placeholder="your email" required>
+                        <span id="email-error" style="color: red;"></span></td>
                     </tr>
                     <tr>
-                        <td><label for="gender">Gender:</label></td>
-                        <td>Male:<input type="radio" name="gender" id="gender" value="male"><br>Female:<input type="radio" name="gender" id="gender" value="female"></td>
+                        
+                        <td><label for="gender">Gender: (required) </label></td>
+                        <td>Male:<input type="radio" name="gender" id="gender" value="male" checked required>
+                            <br>Female:<input type="radio" name="gender" id="gender" value="female">
+                            <span id="gender-error" style="color: red;"></span></td>
                     </tr>
                     <tr>
                         <td><label for="dob">Date of Birth:</label></td>
-                        <td><input type="date" name="dob" id="dob"></td>
+                        <td><input type="date" name="dob" id="dob" required></td>
                     </tr>
                     <tr>
                         <td><label for="course">Course:</label></td>
                         <td>
-                            <select name="course" id="course">
+                            <select name="course" id="course" required>
                                 <option value="diploma">Diploma</option>
                                 <option value="certificate">Certificate</option>
                                 <option value="shortcourse">Short Course</option>
@@ -77,7 +82,7 @@
                     <tr>
                         <td><label for="highestQualification">Highest Qualification:</label></td>
                         <td>
-                            <select name="highestQualification" id="highestQualification">
+                            <select name="highestQualification" id="highestQualification" required>
                                 <option value="diploma">Diploma</option>
                                 <option value="Bachelor's Degree">Bachelor</option>
                                 <option value="Master's Degree">Master</option>
@@ -87,13 +92,14 @@
                     </tr>
                 </td>
                 </table>
-
+            </fieldset>   
+    <fieldset>
     <table>
     <h2>Technical and Practical Details</h2>
         <tr>
             <td><label for="operation system">Operation System:</label></td>
             <td>
-                <select name="operation system" id="operation system">
+                <select name="operation system" id="operation system" required>
                 <option value="windows">Windows</option>
                 <option value="mac">Mac</option>
                 <option value="linux">Linux</option>
@@ -102,110 +108,100 @@
         </tr>
         <tr>
             <td><label for="Internet Speed">Internet Speed:</label></td>  
-            <td><input type="text" name="Internet Speed" id="Internet Speed"></td>
+            <td><input type="text" name="Internet Speed" id="Internet Speed" required></td>
         </tr>
         <tr>
             <td><label for="Laptop Availability">Laptop Availability:</label></td>
             <td>
-                <select name="Laptop Availability" id="Laptop Availability">
+                <select name="Laptop Availability" id="Laptop Availability" required>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
                 </select>
             </td>
         </tr>
         <br>
+    </fieldset id="skillslist">
     <h2>Select Your Skills</h2>
-        <p>Please select one or more skills from the list below:</p>
-        <tr>
-            <select id="skills" name="skills" multiple style="width: 100%; height: 200px;" size="10">
-                    <!-- Technical Skills -->
-                    <optgroup label="Technical Skills">
-                        <option value="html">HTML</option>
-                        <option value="css">CSS</option>
-                        <option value="javascript">JavaScript</option>
-                        <option value="python">Python</option>
-                        <option value="java">Java</option>
-                        <option value="php">PHP</option>
-                        <option value="c++">C++</option>
-                        <option value="c#">C#</option>
-                        <option value="sql">SQL</option>
-                        <option value="ruby">Ruby</option>
-                        <option value="r">R</option>
-                        <option value="git">Git</option>
-                        <option value="nodejs">Node.js</option>
-                        <option value="react">React</option>
-                        <option value="angular">Angular</option>
-                        <option value="vuejs">Vue.js</option>
-                        <option value="django">Django</option>
-                        <option value="flask">Flask</option>
-                        <option value="swift">Swift</option>
-                        <option value="kotlin">Kotlin</option>
-                    </optgroup>
+    <p>Please select one or more skills from the list below:</p>
+
+    <!-- Error message -->
+    <div class="error-message" id="error-message" style="display: none; color: red;">Please select at least one skill.</div>
+    <!-- Technical Skills -->
+    <fieldset>
+    <legend>Technical Skills</legend>
+        <div class="skills-grid">
         
-                    <!-- Design Skills -->
-                    <optgroup label="Design Skills">
-                        <option value="graphic-design">Graphic Design</option>
-                        <option value="ui-ux-design">UI/UX Design</option>
-                        <option value="adobe-photoshop">Adobe Photoshop</option>
-                        <option value="adobe-illustrator">Adobe Illustrator</option>
-                        <option value="adobe-xd">Adobe XD</option>
-                        <option value="figma">Figma</option>
-                    </optgroup>
+                <div><input type="checkbox" id="html" name="skills" value="html"><label for="html">HTML</label></div>
+                <div><input type="checkbox" id="css" name="skills" value="css"><label for="css">CSS</label></div>
+                <div><input type="checkbox" id="javascript" name="skills" value="javascript"><label for="javascript">JavaScript</label></div>
+                <div><input type="checkbox" id="python" name="skills" value="python"><label for="python">Python</label></div>
+                <div><input type="checkbox" id="java" name="skills" value="java"><label for="java">Java</label></div>
+                <div><input type="checkbox" id="php" name="skills" value="php"><label for="php">PHP</label></div>
+                <div><input type="checkbox" id="cpp" name="skills" value="c++"><label for="cpp">C++</label></div>
+                <div><input type="checkbox" id="csharp" name="skills" value="c#"><label for="csharp">C#</label></div>
+                <div><input type="checkbox" id="sql" name="skills" value="sql"><label for="sql">SQL</label></div>
+                <div><input type="checkbox" id="ruby" name="skills" value="ruby"><label for="ruby">Ruby</label></div>
+                <div><input type="checkbox" id="r" name="skills" value="r"><label for="r">R</label></div>
+                <div><input type="checkbox" id="git" name="skills" value="git"><label for="git">Git</label></div>
+                <div><input type="checkbox" id="nodejs" name="skills" value="nodejs"><label for="nodejs">Node.js</label></div>
+                <div><input type="checkbox" id="react" name="skills" value="react"><label for="react">React</label></div>
+                <div><input type="checkbox" id="angular" name="skills" value="angular"><label for="angular">Angular</label></div>
+                <div><input type="checkbox" id="vuejs" name="skills" value="vuejs"><label for="vuejs">Vue.js</label></div>
+                <div><input type="checkbox" id="django" name="skills" value="django"><label for="django">Django</label></div>
+                <div><input type="checkbox" id="flask" name="skills" value="flask"><label for="flask">Flask</label></div>
+                <div><input type="checkbox" id="swift" name="skills" value="swift"><label for="swift">Swift</label></div>
+                <div><input type="checkbox" id="kotlin" name="skills" value="kotlin"><label for="kotlin">Kotlin</label></div>
+    </div>
+    </fieldset>
+
+    <!-- Design Skills -->
+    <fieldset>
+    <legend>Design Skills</legend>
+        <div class="skills-grid">
+                <div><input type="checkbox" id="graphic-design" name="skills" value="graphic-design"><label for="graphic-design">Graphic Design</label></div>
+                <div><input type="checkbox" id="ui-ux-design" name="skills" value="ui-ux-design"><label for="ui-ux-design">UI/UX Design</label></div>
+                <div><input type="checkbox" id="adobe-photoshop" name="skills" value="adobe-photoshop"><label for="adobe-photoshop">Adobe Photoshop</label></div>
+                <div><input type="checkbox" id="adobe-illustrator" name="skills" value="adobe-illustrator"><label for="adobe-illustrator">Adobe Illustrator</label></div>
+                <div><input type="checkbox" id="adobe-xd" name="skills" value="adobe-xd"><label for="adobe-xd">Adobe XD</label></div>
+                <div><input type="checkbox" id="figma" name="skills" value="figma"><label for="figma">Figma</label></div>
+        </div>
+    </fieldset>
+
+    <!-- Data & Analytics Skills -->
+    <fieldset>
+    <legend>Data & Analytics Skills</legend>
+        <div class="skills-grid">
+                <div><input type="checkbox" id="data-analysis" name="skills" value="data-analysis"><label for="data-analysis">Data Analysis</label></div>
+                <div><input type="checkbox" id="machine-learning" name="skills" value="machine-learning"><label for="machine-learning">Machine Learning</label></div>
+                <div><input type="checkbox" id="data-visualization" name="skills" value="data-visualization"><label for="data-visualization">Data Visualization</label></div>
+                <div><input type="checkbox" id="powerbi" name="skills" value="powerbi"><label for="powerbi">Power BI</label></div>
+                <div><input type="checkbox" id="tableau" name="skills" value="tableau"><label for="tableau">Tableau</label></div>
+                <div><input type="checkbox" id="statistics" name="skills" value="statistics"><label for="statistics">Statistics</label></div>
+        </div>
+    </fieldset>
+
         
-                    <!-- Data & Analytics Skills -->
-                    <optgroup label="Data & Analytics Skills">
-                        <option value="data-analysis">Data Analysis</option>
-                        <option value="machine-learning">Machine Learning</option>
-                        <option value="data-visualization">Data Visualization</option>
-                        <option value="powerbi">Power BI</option>
-                        <option value="tableau">Tableau</option>
-                        <option value="statistics">Statistics</option>
-                </select>
-            </td>
-        </tr>      
+    </table>
+</form2>        
+    <!-- Agree to Terms and Policy -->
+    <div class="terms-policy">
+        <input type="checkbox" name="terms" id="terms" required>
+        <label for="terms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>.</label>
+        </div>
+
+    <!-- Submit Button -->
+    <br>
+
+    <input type="submit" id="submit" class="submit" value="Register">
+    <div id="success-message" style="display: none;"></div>
+    </form>
         
-        <tr>
-                <td colspan="2"><input type="submit"  class="submit"value="Register"></td>
-                </tr>
-            </tr>
-                </table>
-            
-                <!-- Agree to Terms and Policy -->
-            <div class="terms-policy">
-                <input type="checkbox" name="terms" id="terms" required>
-                <label for="terms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>.</label>
-            </div>
-            </form>
+
     <!-- Footer with Copyright -->
     <footer>
     <p>&copy; 2024 SARA Al-Zaabi. All rights reserved.</p>
     <p>&copy; 2024 Al-Bayan Institute.</p>
-</footer>
-        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        (function() {
-            emailjs.init("sjr6DgOpwjFUzWSK8"); // Replace with your EmailJS User ID
-        })();
-
-        document.getElementById('registration-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            // Get form values
-            const formData = new FormData(event.target);
-            const data = {};
-            formData.forEach((value, key) => data[key] = value);
-
-            // Send the email
-            emailjs.send('service_m6jdzmr', 'template_hjbyvhc', data)
-                .then(function(response) {
-                    alert('Email sent successfully!');
-                    console.log('Success:', response);
-                }, function(error) {
-                    alert('Failed to send email.');
-                    console.log('Error:', error);
-                });
-        });
-    </script>
-        <script src="p2.js"></script>
+    </footer>
+    <script src="p2.js"></script>
     </body>
     </html>

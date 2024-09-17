@@ -1,15 +1,17 @@
-
-// Select input elements for validation
+// Select input elements for validation 
 const fullname = document.getElementById('name');
 const email = document.getElementById('email');
 const phone = document.getElementById('phone');
 const form = document.getElementById('registration-form');
-
+const submit = document.getElementById('submit');
+const skillslist = document.querySelectorAll('input[name="skills"]');
+const successMessage = document.getElementById('success-message'); // Success message element
+successMessage.style.display = "none"; // Hide success message initially
 // Function for clearing error messages and styles
 function clearErrors() {
     fullname.style.border = "";
     document.getElementById('name-error').innerHTML = "";
-    
+
     email.style.border = "";
     document.getElementById('email-error').innerHTML = "";
 
@@ -31,17 +33,27 @@ function validate() {
         valid = false;
     }
 
-    // Validate email
+    // Validate email (check for empty and proper email format)
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     if (email.value.trim() === "") {
         email.style.border = "1px solid red";
         document.getElementById('email-error').innerHTML = "Email cannot be empty";
         valid = false;
+    } else if (!emailPattern.test(email.value)) {
+        email.style.border = "1px solid red";
+        document.getElementById('email-error').innerHTML = "Please enter a valid email address";
+        valid = false;
     }
 
-    // Validate phone
+    // Validate phone (check for empty and proper phone number format)
+    const phonePattern = /^\d{7,15}$/;
     if (phone.value.trim() === "") {
         phone.style.border = "1px solid red";
         document.getElementById('phone-error').innerHTML = "Phone cannot be empty";
+        valid = false;
+    } else if (!phonePattern.test(phone.value)) {
+        phone.style.border = "1px solid red";
+        document.getElementById('phone-error').innerHTML = "Please enter a valid phone number";
         valid = false;
     }
 
@@ -55,46 +67,42 @@ function validate() {
     return valid;
 }
 
+// Function to validate skills selection
+function validateSkills() {
+    const errorMessage = document.getElementById('skills-error');
+    const checkboxes = document.querySelectorAll('input[name="skills"]:checked');
+
+    errorMessage.style.display = 'none'; // Hide the error message initially
+
+    if (checkboxes.length === 0) {
+        errorMessage.style.display = 'block';
+        return false; // Prevent form submission
+    }
+
+    errorMessage.style.display = 'none'; // Hide the error message
+    return true; // Allow form submission
+}
+
+// Function to log that someone filled the form
+function formFilled() {
+    console.log(`Form filled by: ${fullname.value}, Email: ${email.value}, Phone: ${phone.value}`);
+    alert('Someone has filled the form!');
+}
+
+// Function to show success message
+function showSuccessMessage() {
+    successMessage.innerHTML = "Your form has been successfully registered.";
+    successMessage.style.color = "green";
+    successMessage.style.display = "block";
+}
 // Handle form submission
 form.addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
 
-    if (!validate()) {
-        return; // Stop form submission if validation fails
+    if (validate() && validateSkills()) {
+        showSuccessMessage(); // Show success message 
     }
-
-    // Get form values
-    const formData = new FormData(event.target);
-    const data = {};
-    formData.forEach((value, key) => {
-        if (key === 'skills') {
-            // Collect all selected skills
-            const selectedSkills = Array.from(document.getElementById('skills').selectedOptions)
-                                        .map(option => option.value);
-            data[key] = selectedSkills;
-        } else {
-            data[key] = value;
-        }
-    });
-
-    console.log(data); // Log form data including the selected skills
-
-    // Send the email using EmailJS
-    emailjs.send('service_m6jdzmr', 'template_hjbyvhc', data)
-        .then(function(response) {          
-            alert('Email sent successfully');
-        }, function(error) {
-            alert('Failed to send email');
-        });
 });
-
-
-
-
-
-
-
-
 
 
 

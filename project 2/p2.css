@@ -70,13 +70,33 @@ input[type="text"], input[type="email"], input[type="password"], input[type="tel
     background-color: #f9f9f9;
 }
 
-textarea {
-    resize: vertical;
-}
 
-input[type="radio"], input[type="checkbox"] {
-    margin-right: 10px;
-}
+    fieldset {
+        border: 1px solid #651010;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        padding: 15px;
+        }
+
+        legend {
+        font-weight: bold;
+        color: #4CAF50;
+        padding: 0 10px;
+        }
+
+        label {
+        margin-left: 10px;
+        }
+
+        .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        }
+
+        .skills-grid input[type="checkbox"] {
+        margin-right: 10px;
+        }
 
 .submit {
     background-color: #3498db;
