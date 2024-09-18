@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer Roadmap</title>
+    <link rel="stylesheet" href="p6.css">
+</head>
+<body>
+    <h1>Software Engineer Roadmap</h1>
+
+    <div class="roadmap-container">
+
+        <!-- STAGE 1 -->
+        <div class="stage" onclick="toggleDetails('stage1')">
+            <img src="/project 6/media/stage1ff.png" alt="Stage 1">
+            <p class="stage-title">Stage 1: Learn the fundamentals</p>
+        </div>
+
+        <div class="details" id="stage1">
+            <h2>Learn the fundamentals</h2>
+            <div class="checklist-container">
+                <ul>
+                    <li onclick="toggleComplete(this)">HTML (Hyper Text Markup Language)</li>
+                    <li onclick="toggleComplete(this)">CSS (Cascading Style Sheets)</li>
+                    <li onclick="toggleComplete(this)">JavaScript</li>
+                </ul>
+            </div>
+
+            <h3>Step 2: Practice building projects</h3>
+            <div class="checklist-container">
+                <ul>
+                    <li onclick="toggleComplete(this)">Personal projects</li>
+                    <li onclick="toggleComplete(this)">Join a technical team</li>
+                    <li onclick="toggleComplete(this)">Contribute to open-source projects</li>
+                </ul>
+            </div>
+
+            <h3>Step 3: Learn version control systems</h3>
+            <div class="checklist-container">
+                <ul>
+                    <li onclick="toggleComplete(this)">GitHub</li>
+                    <li onclick="toggleComplete(this)">GitLab</li>
+                    <li onclick="toggleComplete(this)">Bitbucket</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- STAGE 2 -->
+        <div class="stage" onclick="toggleDetails('stage2')">
+            <img src="/project 6/media/skills.jpg" alt="Stage 2">
+            <p class="stage-title">Stage 2: Mastering Skills</p>
+        </div>
+
+        <div class="details" id="stage2">
+            <h2>Mastering Skills</h2>
+            <h3>Step 1: Technical Skills</h3>
+            <div class="checklist-container">
+                <ul>
+                    <li onclick="toggleComplete(this)">Coding and computer programming</li>
+                    <li onclick="toggleComplete(this)">Software testing</li>
+                    <li onclick="toggleComplete(this)">Object-oriented design (OOD)</li>
+                    <li onclick="toggleComplete(this)">Software development</li>
+                </ul>
+            </div>
+
+            <h3>Step 2: Soft Skills</h3>
+            <div class="checklist-container">
+                <ul>
+                    <li onclick="toggleComplete(this)">Communication skills</li>
+                    <li onclick="toggleComplete(this)">Team player</li>
+                    <li onclick="toggleComplete(this)">Problem solving</li>
+                    <li onclick="toggleComplete(this)">Attention to detail</li>
+                </ul>
+            </div>
+
+            <h3>Step 3: Programming Languages</h3>
+            <div class="checklist-container">
+                <ul>
+                    <li onclick="toggleComplete(this)">Java</li>
+                    <li onclick="toggleComplete(this)">Python</li>
+                    <li onclick="toggleComplete(this)">C and C++</li>
+                    <li onclick="toggleComplete(this)">JavaScript</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- STAGE 3 -->
+        <div class="stage" onclick="toggleDetails('stage3')">
+            <img src="/project 6/media/career.jpg" alt="Stage 3">
+            <p class="stage-title">Stage 3: Software Engineer Career Path</p>
+        </div>
+
+        <div class="details" id="stage3">
+            <h2>Software Engineer Career Path</h2>
+            <div class="checklist-container">
+                <ul>
+                    <li onclick="toggleComplete(this)">📱 Mobile Developer</li>
+                    <li onclick="toggleComplete(this)">💻 Front-End Engineers</li>
+                    <li onclick="toggleComplete(this)">📁 Back-End Engineers</li>
+                    <li onclick="toggleComplete(this)">🔧 DevOps</li>
+                    <li onclick="toggleComplete(this)">🌐 Full-Stack Engineers</li>
+                    <li onclick="toggleComplete(this)">📈 Data Engineer</li>
+                    <li onclick="toggleComplete(this)">🎮 Game Engineer</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- STAGE 4 -->
+        <div class="stage" onclick="toggleDetails('stage4')">
+            <img src="/project 6/media/portofilo.png" alt="Stage 4">
+            <p class="stage-title">Stage 4: Build a portfolio and apply for jobs</p>
+        </div>
+
+        <div class="details" id="stage4">
+            <h2>Build a portfolio and apply for jobs</h2>
+            <div class="checklist-container">
+                <ul>
+                    <li onclick="toggleComplete(this)">Build a portfolio site</li>
+                    <li onclick="toggleComplete(this)">Upload projects on GitHub</li>
+                    <li onclick="toggleComplete(this)">Create a resume</li>
+                    <li onclick="toggleComplete(this)">Apply for jobs</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="progress-container">
+        <h3>Progress:</h3>
+        <progress id="progress-bar" max="100" value="0"></progress>
+    </div>
+
+<script src="p6.js"></script>
+<footer></footer>
+<img src="/project 6/media/Blue Banner.png" alt="Road to Success Quote" class="footer-img">
+</footer>
+<div class="sources">
+    <h2>Sources</h2>
+    <ul>
+    <li>What Does a Software Engineer Do? - BrainStation, retrieved from <a href="https://brainstation.io/career-guides/what-does-a-software-engineer-do" target="_blank">https://brainstation.io/career-guides/what-does-a-software-engineer-do</a></li>
+    <li>How to Become a Frontend Developer - Roadmap.sh, retrieved from <a href="https://roadmap.sh/frontend/how-to-become-frontend-developer" target="_blank">https://roadmap.sh/frontend/how-to-become-frontend-developer</a></li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,40 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<htmljn lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Color Markers</title>
-    <link rel="stylesheet" href="p5.css" >
-</head>
+    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>CSS Color Markers</title> 
+    <link rel="stylesheet" href="p5.css">
+    </head>
 <body>
-<h1>CSS Color Markers</h1>
-<div class="container">
-    <!--Red Marker-->
-    <div class="marker">
-        <div class="cap red-cap"></div>
-        <div class="sleeve"></div>
-        <div class="body red"></div>
+<h1>Color Mixer</h1>
+    <div class="container">
+        <!-- Color palette -->
+        <div class="palette">
+            <div class="color" style="background-color: red;" onclick="selectColor('red')"></div>
+            <div class="color" style="background-color: green;" onclick="selectColor('green')"></div>
+            <div class="color" style="background-color: blue;" onclick="selectColor('blue')"></div>
+            <div class="color" style="background-color: yellow;" onclick="selectColor('yellow')"></div>
+            <div class="color" style="background-color: orange;" onclick="selectColor('orange')"></div>
+            <div class="color" style="background-color: purple;" onclick="selectColor('purple')"></div>
+            <div class="color" style="background-color: pink;" onclick="selectColor('pink')"></div>
+            <div class="color" style="background-color: brown;" onclick="selectColor('brown')"></div>
+        </div>
     </div>
-
-
-    <!--Green Marker-->
-    <div class="marker">
-        <div class="cap green-cap"></div>
-        <div class="sleeve"></div>
-        <div class="body green"></div>
-    </div>
-    
-
-    <!--Blue Marker-->
-    <div class="marker">
-        <div class="cap blue-cap"></div>
-        <div class="sleeve"></div>
-        <div class="body blue"></div>
-    </div>
-</div>
-
-
-
-
+    <canvas id="mixCanvas" width="400" height="400"></canvas>
+    <button onclick="clearCanvas()">Clear</button>
+    <script src="script.js"></script>
 </body>
 </html>

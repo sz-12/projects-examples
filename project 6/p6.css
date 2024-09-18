@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+        }
+
+.roadmap-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px auto;
+    flex-wrap: wrap;
+}
+
+.stage {
+    position: relative;
+    margin: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.stage:hover {
+    transform: scale(1.05);
+}
+
+.stage img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.details {
+    display: none; 
+    margin-top: 20px;
+    text-align: left;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.checklist-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.checklist-container li {
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.checklist-container li:hover {
+    background-color: #f9f9f9;
+}
+
+.checklist-container li.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.progress-container {
+    margin: 50px 0;
+}
+
+progress {
+    width: 100%;
+    max-width: 600px;
+    height: 25px;
+}
+
+h1 {
+    margin: 30px 0;
+}
+
+.stage-title {
+    font-weight: bold;
+    margin: 15px 0 5px 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff; /* Optional if you want a background color */
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.sources {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.sources h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.sources ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.sources li {
+    margin: 10px 0;
+}
+
+.sources a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+.sources a:hover {
+    text-decoration: underline;
+}
